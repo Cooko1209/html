@@ -1,0 +1,234 @@
+/* 全局样式 */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 容器样式 */
+.container {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 标题样式 */
+.header {
+  font-family: "標楷體", sans-serif;
+  font-size: 40px;
+  font-weight: bold;
+  border: 2px solid transparent;
+  border-radius: 60px;
+  margin-bottom: 40px;
+  color: #a5caff;
+  background: linear-gradient(45deg, #63e796, #1938eb);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+/* 卡片容器样式 */
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* 卡片样式 */
+.card {
+  transition: all 0.5s ease-in-out;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  z-index: 1;
+  box-shadow: 0 0px 16px rgba(111, 111, 212, 0.5);
+  background-color: #ccffd7;
+}
+
+/* 卡片内图片样式 */
+.card img {
+  width: 100%;
+  height: 300px;
+  border-radius: 10px;
+  opacity: 0.3; /* 设置图片透明度为0.3，使其看起来更透明 */
+}
+
+.card:hover img {
+  opacity: 1;
+}
+
+/* 卡片内文本样式 */
+.card p {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* 按钮容器样式 */
+.button-container {
+  position: fixed;
+  bottom: -110px;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: -1;
+  margin-top: 10px; /* 在按钮容器顶部添加外边距 */
+}
+
+/* 按钮样式 */
+.button {
+  background-color: #50d3ac;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/* 侧边栏样式 */
+.sidebar {
+  position: fixed;
+  right: 10px;
+  top: 70%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar a {
+  background-color: #008817;
+  color: white;
+  padding: 10px;
+  margin: 5px 0;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 4px;
+}
+
+.sidebar a:hover {
+  background-color: #036b1a;
+}
+
+/* 横幅样式 */
+.banner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.banner img {
+  width: 100%;
+  height: 200px;
+}
+
+.banner .text {
+  color: rgb(247, 244, 86);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+}
+
+/* 页脚样式 */
+.footer {
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+  color: rgb(0, 17, 255);
+  text-align: middle;
+  font-size: 20px;
+  padding: 5px 0;
+  margin-top: auto;
+}
+
+/*banner 动画*/
+.stars .star {
+  display: block;
+  position: absolute;
+  width: 150px;
+  background: #202020;
+  height: 2px;
+  opacity: 1;
+  transform-origin: 0;
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+  animation: meteor linear infinite;
+}
+
+.stars .star1 {
+  left: 35%;
+  top: 25%;
+  animation-duration: 7s;
+}
+
+.stars .star2 {
+  left: 42%;
+  top: 40%;
+  animation-duration: 5.5s;
+  width: 250px;
+}
+
+.stars .star3 {
+  left: 50%;
+  top: 30%;
+  animation-duration: 6s;
+}
+
+.stars .star4 {
+  left: 100%;
+  top: 25%;
+  animation-duration: 6s;
+  width: 250px;
+}
+
+.stars .star5 {
+  left: 110%;
+  top: 30%;
+  animation-duration: 9s;
+}
+
+@keyframes meteor {
+  0% {
+    opacity: 1;
+    margin-top: -250px;
+    margin-right: -250px;
+  }
+
+  12% {
+    opacity: 0;
+  }
+
+  15% {
+    margin-top: 250px;
+    margin-left: -500px;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

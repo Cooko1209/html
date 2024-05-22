@@ -1,0 +1,245 @@
+/* 全局样式 */
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  /*
+  background: linear-gradient(135deg, #fffbe0 25%, transparent 25%) -50px 0,
+    linear-gradient(225deg, #fffbe0 25%, transparent 25%) -50px 0,
+    linear-gradient(315deg, #fffbe0 25%, transparent 25%),
+    linear-gradient(45deg, #fffbe0 25%, transparent 25%);
+  background-size: 100px 100px;
+  */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* 容器样式 */
+.container {
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* 标题样式 */
+.header {
+  font-family: "標楷體", sans-serif; /* 字型-越前面的優先 */
+  font-size: 40px; /* 字體大小 */
+  font-weight: bold; /* 文字粗度 */
+  border: 2px solid transparent; /* 邊框寬度設為2px，顏色設為透明，這樣背景色不會影響到邊框 */
+  border-radius: 60px; /* 弧度 */
+  margin-bottom: 40px;
+  color: #a5caff;
+  background: linear-gradient(45deg, #63e796, #1938eb); /* 背景顏色漸變 */
+  -webkit-background-clip: text; /* 使用背景來裁剪文字 */
+  -webkit-text-fill-color: transparent; /* 填充顏色設為透明，這樣只會顯示背景色 */
+  display: inline-block; /* 使元素的背景裁剪生效 */
+  padding: 10px 20px; /* 添加內邊距，以便更好地顯示背景 */
+}
+
+/* 卡片容器样式 */
+.card-container {
+  display: flex; /* 使用Flexbox布局 */
+  justify-content: space-around; /* 在主軸上均勻分配子元素的空間 */
+  flex-wrap: wrap; /* 允許子元素換行 */
+}
+
+/* 卡片样式 */
+.card {
+  transition: all 0.3s ease-in-out; /* 平滑過渡效果 */
+  background-color: #fff; /* 卡片的背景顏色，白色 */
+  border-radius: 10px; /* 卡片的圓角半徑，10px */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 卡片的陰影效果 */
+  width: 300px; /* 卡片的寬度 */
+  margin: 10px; /* 卡片的外邊距 */
+  padding: 20px; /* 卡片的內邊距 */
+  text-align: center; /* 卡片內文本的居中對齊 */
+  position: relative; /* 使卡片內的絕對定位元素基於此卡片進行定位 */
+}
+
+.card:hover {
+  transform: scale(1.05); /* 鼠標懸停時放大卡片 */
+  z-index: 1; /* 鼠標懸停時卡片的層級要比其他卡片高一層 */
+  box-shadow: 0 0px 16px rgba(111, 111, 212, 0.5); /* 鼠標懸停時的陰影效果 */
+  background-color: #ccffd7; /* 鼠標懸停時的背景顏色 */
+}
+
+/* 卡片内图片样式 */
+.card img {
+  width: 100%;
+  height: 500px;
+  border-radius: 10px;
+  opacity: 0.3;
+}
+
+.card:hover img {
+  opacity: 1;
+}
+
+/* 卡片内文本样式 */
+.card p {
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.6;
+}
+
+/* 按钮容器样式 */
+.button-container {
+  position: fixed; /* 使按钮绝对定位 */
+  bottom: -30px; /* 距离卡片底部的距离 */
+  left: 50%;
+  transform: translateX(-50%); /* 使按钮居中 */
+  z-index: 1; /* 使按钮在卡片之上 */
+
+  /*display: flex; /* 使用Flexbox布局 */
+  /*justify-content: center; /* 在主軸上均勻分配子元素的空間 */
+  /*align-items: center; /* 在副軸上對齊子元素 */
+
+  /*transition: all 0.3s ease-in-out; /* 平滑過渡效果 */
+}
+
+/* 按钮样式 */
+.button {
+  background-color: #50d3ac; /* 背景顏色，使用淺綠色 */
+  color: #fff; /* 字體顏色，使用白色 */
+  padding: 10px 20px; /* 內邊距，上下各10px，左右各20px */
+  border: none; /* 無邊框 */
+  border-radius: 5px; /* 邊框圓角半徑為5px，創造圓角效果 */
+  font-size: 18px; /* 字體大小為18px */
+  cursor: pointer; /* 當鼠標懸停在按鈕上時，指針變成手形 */
+}
+
+/* 侧边栏样式 */
+.sidebar {
+  position: fixed; /* 固定定位，使側邊欄固定在視口 */
+  right: 10px; /* 側邊欄距離視口右側10px */
+  top: 70%; /* 側邊欄距離視口頂部70% */
+  transform: translateY(-50%); /* 將側邊欄垂直移動自身高度的50%，使其垂直居中 */
+  display: flex; /* 使用Flexbox布局 */
+  flex-direction: column; /* 使子元素按列方向排列 */
+}
+
+.sidebar a {
+  background-color: #008817; /* 連結背景顏色為深綠色 */
+  color: white; /* 連結文字顏色為白色 */
+  padding: 10px; /* 連結內邊距為10px */
+  margin: 5px 0; /* 連結上下外邊距為5px，左右外邊距為0 */
+  text-align: center; /* 連結內文字居中對齊 */
+  text-decoration: none; /* 移除連結的下劃線 */
+  border-radius: 4px; /* 連結的圓角半徑為4px */
+}
+
+.sidebar a:hover {
+  background-color: #036b1a; /* 鼠標懸停時連結背景顏色變為較深的綠色 */
+}
+
+/* 横幅样式 */
+.banner {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+.banner img {
+  width: 100%;
+  height: 200px;
+}
+
+.banner .text {
+  color: rgb(247, 244, 86);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+}
+
+/* 页脚样式 */
+.footer {
+  width: 100%;
+  position: fixed; /* 使页脚固定在页面底部 */
+  background-color: #ffffff;
+  color: rgb(0, 17, 255);
+  text-align: middle;
+  font-size: 20px;
+  padding: 5px 0; /* 页脚的内边距 */
+  margin-top: auto; /* 将页脚推到页面底部*/
+}
+
+/*banner 动画*/
+.stars .star {
+  display: block; /* 將星星設置為塊級元素 */
+  position: absolute; /* 絕對定位，使星星可以自由定位在容器內 */
+  width: 150px; /* 星星的寬度為150px */
+  background: #202020; /* 星星的背景顏色為深灰色 */
+  height: 2px; /* 星星的高度為2px，創建一條細長的線 */
+  opacity: 1; /* 星星的透明度為100% */
+  transform-origin: 0; /* 旋轉的中心點設置在元素的左側 */
+  -webkit-transform: rotate(135deg); /* 在WebKit瀏覽器中旋轉135度 */
+  -moz-transform: rotate(135deg); /* 在Mozilla瀏覽器中旋轉135度 */
+  -o-transform: rotate(135deg); /* 在Opera瀏覽器中旋轉135度 */
+  transform: rotate(135deg); /* 旋轉135度 */
+  -webkit-transition: 0.25s ease-in-out; /* 在WebKit瀏覽器中設置過渡效果，持續0.25秒，使用ease-in-out曲線 */
+  -moz-transition: 0.25s ease-in-out; /* 在Mozilla瀏覽器中設置過渡效果，持續0.25秒，使用ease-in-out曲線 */
+  -o-transition: 0.25s ease-in-out; /* 在Opera瀏覽器中設置過渡效果，持續0.25秒，使用ease-in-out曲線 */
+  transition: 0.25s ease-in-out; /* 設置過渡效果，持續0.25秒，使用ease-in-out曲線 */
+  animation: meteor linear infinite; /* 設置動畫效果，動畫名稱為meteor，線性播放，無限循環 */
+}
+
+.stars .star1 {
+  left: 35%;
+  top: 25%;
+  animation-duration: 7s;
+}
+
+.stars .star2 {
+  left: 42%;
+  top: 40%;
+  animation-duration: 5.5s;
+  width: 250px;
+}
+
+.stars .star3 {
+  left: 50%;
+  top: 30%;
+  animation-duration: 6s;
+}
+
+.stars .star4 {
+  left: 100%;
+  top: 25%;
+  animation-duration: 6s;
+  width: 250px;
+}
+
+.stars .star5 {
+  left: 110%;
+  top: 30%;
+  animation-duration: 9s;
+}
+
+@keyframes meteor {
+  0% {
+    opacity: 1;
+    margin-top: -250px;
+    margin-right: -250px;
+  }
+
+  12% {
+    opacity: 0;
+  }
+
+  15% {
+    margin-top: 250px;
+    margin-left: -500px;
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

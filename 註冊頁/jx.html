@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>會員註冊</title>
+  <link rel="stylesheet" href="jx.css">
+</head>
+
+<body>
+  <div class="registration-form">
+    <h2>註冊會員</h2>
+    <p>請輸入您的手機號碼並選取傳送驗證碼，收到簡訊後將驗證碼填入</p>
+    <form id="registerForm" action="" method="post">
+      <label for="phone">手機號碼<span class="required">*</span></label>
+      <input type="text" id="phone" name="phone" required>
+      <button type="button" id="sendCodeBtn">發送驗證碼</button>
+
+      <label for="email">電子郵件<span class="required">*</span></label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">密碼<span class="required">*</span></label>
+      <input type="password" id="password" name="password" required>
+
+      <label for="confirmPassword">確認密碼<span class="required">*</span></label>
+      <input type="password" id="confirmPassword" name="confirmPassword" required>
+
+      <label for="fullName">真實姓名</label>
+      <input type="text" id="fullName" name="fullName">
+
+      <label>性別<span class="required">*</span></label>
+      <input type="radio" id="genderFemale" name="gender" value="female" required>
+      <label for="genderFemale">女</label>
+      <input type="radio" id="genderMale" name="gender" value="male" required>
+      <label for="genderMale">男</label>
+
+      <label for="dob">生日<span class="required">*</span></label>
+      <input type="date" id="dob" name="dob" required>
+
+      <label for="altPhone">其他聯絡電話</label>
+      <input type="text" id="altPhone" name="altPhone">
+
+      <label for="address">地址</label>
+      <input type="text" id="address" name="address">
+
+      <label>
+        <input type="checkbox" id="agree" name="agree" required>
+        我同意提供以上個人資料並使用。
+      </label>
+
+      <button type="submit">註冊</button>
+    </form>
+  </div>
+  <script src="jx.js"></script>
+</body>
+
+</html>

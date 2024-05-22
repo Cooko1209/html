@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>會員資料查詢與更新</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div class="member-info">
+    <h2>會員資料查詢與更新</h2>
+    <div id="memberDetails">
+      <!-- 會員資料將顯示在這裡 -->
+    </div>
+    <button id="editButton">編輯資料</button>
+    <div id="updateForm" style="display: none;">
+      <h3>更新會員資料</h3>
+      <form id="updateMemberForm">
+        <label for="phone">手機號碼:</label>
+        <input type="text" id="phone" name="phone" required>
+
+        <label for="email">電子郵件:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="fullName">真實姓名:</label>
+        <input type="text" id="fullName" name="fullName" required>
+
+        <label for="gender">性別:</label>
+        <select id="gender" name="gender" required>
+          <option value="男">男</option>
+          <option value="女">女</option>
+        </select>
+
+        <label for="dob">生日:</label>
+        <input type="date" id="dob" name="dob" required>
+
+        <label for="altPhone">其他聯絡電話:</label>
+        <input type="text" id="altPhone" name="altPhone">
+
+        <label for="address">地址:</label>
+        <input type="text" id="address" name="address">
+
+        <button type="submit">更新資料</button>
+      </form>
+    </div>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+
+</html>

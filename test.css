@@ -7,6 +7,8 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background-color: #ffffff; /* 背景设置 */
+  overflow: hidden; /* 隐藏溢出内容 */
 }
 
 /* 容器样式 */
@@ -15,16 +17,18 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
+  background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+  border-radius: 10px;
 }
 
 /* 标题样式 */
 .header {
   font-family: "標楷體", sans-serif;
-  font-size: 40px;
+  font-size: 40px; /* 字体大小 */
   font-weight: bold;
   border: 2px solid transparent;
-  border-radius: 60px;
-  margin-bottom: 40px;
+  border-radius: 60px; /* 圆角边框 */
+  margin-bottom: 40px; /* 标题下边距 */
   color: #a5caff;
   background: linear-gradient(45deg, #63e796, #1938eb);
   -webkit-background-clip: text;
@@ -36,36 +40,40 @@ body {
 /* 卡片容器样式 */
 .card-container {
   display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  justify-content: space-around; /* 在主軸上均勻分配子元素的空間 */
+  flex-wrap: wrap; /* 允許子元素換行 */
+  background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
 }
 
 /* 卡片样式 */
 .card {
-  transition: all 0.5s ease-in-out;
-  background-color: #fff;
+  transition: all 0.3s ease-in-out;
+  background-color: rgba(255, 255, 255, 0.8);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   width: 300px;
-  margin: 10px;
+  margin: 10px; /* 卡片的外邊距 */
   padding: 20px;
   text-align: center;
   position: relative;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: scale(1.05); /* 鼠標懸停時放大卡片 */
+
   z-index: 1;
   box-shadow: 0 0px 16px rgba(111, 111, 212, 0.5);
   background-color: #ccffd7;
+  transition: all 0.3s ease-in-out; /* 平滑過渡效果 */
 }
 
-/* 卡片内图片样式 */
+/* 卡片内圖片样式 */
 .card img {
   width: 100%;
   height: 300px;
   border-radius: 10px;
-  opacity: 0.3; /* 设置图片透明度为0.3，使其看起来更透明 */
+  opacity: 0.5; /* 设置图片透明度为0.3，使其看起来更透明 */
+  background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
 }
 
 .card:hover img {
@@ -83,11 +91,11 @@ body {
 /* 按钮容器样式 */
 .button-container {
   position: fixed;
-  bottom: -110px;
+  bottom: -80px;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%); /* 使按钮水平居中 */
   z-index: -1;
-  margin-top: 10px; /* 在按钮容器顶部添加外边距 */
+  margin-top: 3px; /* 在按钮容器顶部添加外边距 */
 }
 
 /* 按钮样式 */
@@ -116,9 +124,9 @@ body {
   color: white;
   padding: 10px;
   margin: 5px 0;
-  text-align: center;
-  text-decoration: none;
-  border-radius: 4px;
+  text-align: center; /* 文本居中 */
+  text-decoration: none; /* 去除下划线 */
+  border-radius: 4px; /* 圆角边框 */
 }
 
 .sidebar a:hover {
@@ -149,22 +157,43 @@ body {
 /* 页脚样式 */
 .footer {
   width: 100%;
-  position: fixed;
+  position: absolute;
   bottom: 0;
-  background-color: #ffffff;
-  color: rgb(0, 17, 255);
-  text-align: middle;
+  font-family: "標楷體", sans-serif;
   font-size: 20px;
-  padding: 5px 0;
-  margin-top: auto;
+  color: #020a7c;
+  background: rgba(255, 255, 255, 0.8); /* 半透明背景 */
+  padding: 20px; /* 调整为距离边框40px */
+  display: flex;
+  justify-content: center; /* 在主軸上均勻分配子元素的空間 */
+  flex-wrap: wrap; /* 允许换行 */
 }
 
-/*banner 动画*/
+.footer ul,
+li,
+ol {
+  list-style-type: none; /* 去除列表项前的小点 */
+  padding: 10px; /* 移除默认的内边距 */
+}
+
+.footer a {
+  text-align: center;
+  text-decoration: none; /* 去除下划线 */
+  color: inherit; /* 链接颜色与父元素一致 */
+}
+
+/*banner 动画 流星动画样式 */
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
 .stars .star {
   display: block;
   position: absolute;
   width: 150px;
-  background: #202020;
+  background: #19258b;
   height: 2px;
   opacity: 1;
   transform-origin: 0;
@@ -172,13 +201,13 @@ body {
   -moz-transform: rotate(135deg);
   -o-transform: rotate(135deg);
   transform: rotate(135deg);
-  -webkit-transition: 0.25s ease-in-out;
-  -moz-transition: 0.25s ease-in-out;
-  -o-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
   animation: meteor linear infinite;
 }
-
+/*這段CSS代碼為每個星星（star1 到 star5）設置了它們的初始位置和動畫持續時間。left 和 top 屬性用於設置星星的位置，而 animation-duration 用於設置動畫的持續時間。特定的星星還設置了寬度。*/
 .stars .star1 {
   left: 35%;
   top: 25%;
@@ -200,22 +229,35 @@ body {
 
 .stars .star4 {
   left: 100%;
-  top: 25%;
+  top: 45%;
   animation-duration: 6s;
   width: 250px;
 }
 
 .stars .star5 {
-  left: 110%;
-  top: 30%;
+  left: 80%;
+  top: 60%;
   animation-duration: 9s;
 }
+/*
+流星動畫關鍵幀：
+@keyframes 定義了名為 meteor 的動畫，它描述了動畫從開始到結束的各個階段。
 
+這段動畫代碼描述了流星動畫的幾個關鍵幀：
+
+0%：初始狀態，星星完全可見，位置在頂部左邊。
+12%：星星開始變得不可見。
+15%：星星移動到頁面中間並變得完全不可見。
+100%：星星移動到頁面底部，保持不可見狀態。
+修改與應用：
+如果需要進一步調整或優化動畫效果，可以根據需要調整每個星星的left、top、animation-duration和動畫關鍵幀的具體數值。此外，可以使用類似animation-delay來錯開每個星星的動畫開始時間，增加動畫的多樣性和現實感。
+*/
 @keyframes meteor {
   0% {
     opacity: 1;
-    margin-top: -250px;
-    margin-right: -250px;
+    margin-top: -250px; /* 這裡控制星星的高度 */
+    margin-right: -250px; /* 這裡控制星星的寬度 */
+    animation-delay: 0.5s;
   }
 
   12% {
@@ -223,8 +265,8 @@ body {
   }
 
   15% {
-    margin-top: 250px;
-    margin-left: -500px;
+    margin-top: 250px; /* 這裡控制星星的高度 */
+    margin-left: -500px; /* 這裡控制星星的寬度 */
     opacity: 0;
   }
 

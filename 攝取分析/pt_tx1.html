@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>食物份量記錄與建議</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <div class="container">
+    < class="top-section">
+      <div class="left-section">
+        <div class="chart-container">
+          <canvas id="foodChart"></canvas>
+        </div>
+        <div class="chart-controls">
+          <label><input type="radio" name="displayMode" value="7days" checked>7天</label>
+          <label><input type="radio" name="displayMode" value="30days">30天</label>
+        </div>
+        <div class="checkbox-container">
+          <label><input type="checkbox" class="food-checkbox" value="grains" checked>全穀雜糧類</label>
+          <label><input type="checkbox" class="food-checkbox" value="protein" checked>豆魚蛋肉類</label>
+          <label><input type="checkbox" class="food-checkbox" value="dairy" checked>乳品類</label>
+          <label><input type="checkbox" class="food-checkbox" value="vegetables" checked>蔬菜類</label>
+          <label><input type="checkbox" class="food-checkbox" value="fruits" checked>水果類</label>
+          <label><input type="checkbox" class="food-checkbox" value="oilsNuts" checked>油脂與堅果種子類</label>
+          <button type="button" onclick="updateChart()">更新圖表</button>
+        </div>
+      </div>
+      <div class="container">
+        <div class="top-section">
+          <div class="right-section">
+            <div class="text-analysis">
+              <p id="analysis"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+
+  <div class="bottom-section">
+    <div class="input-section">
+      <form class="food-input">
+        <label>全穀雜糧類: <input type="number" id="grains" min="0"> 克</label>
+        <label>豆魚蛋肉類: <input type="number" id="protein" min="0"> 克</label>
+        <label>乳品類: <input type="number" id="dairy" min="0"> 克</label>
+        <label>蔬菜類: <input type="number" id="vegetables" min="0"> 克</label>
+        <label>水果類: <input type="number" id="fruits" min="0"> 克</label>
+        <label>油脂與堅果種子類: <input type="number" id="oilsNuts" min="0"> 克</label>
+        <button type="button" onclick="submitData()">提交</button>
+      </form>
+    </div>
+    <div class="calendar-section">
+      <input type="date" id="selectedDate" onchange="updateChart()">
+    </div>
+  </div>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+
+</html>
